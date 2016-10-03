@@ -1,1 +1,0 @@
-<?php if (is_user_logged_in()) { ?><?php echo do_shortcode( '[adverts_manage]' ); ?><?php } else { ?><div class="tt_content"> <?php get_template_part( 'includes/thaitheme-login-from', get_post_format() ); ?></div><?php } ?>
