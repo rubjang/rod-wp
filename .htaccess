@@ -1,0 +1,45 @@
+# BEGIN SF Move Login
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^admin-login/?$ wp-login.php [QSA,L]
+    RewriteRule ^postpass/?$ wp-login.php?action=postpass [QSA,L]
+    RewriteRule ^admin-logout/?$ wp-login.php?action=logout [QSA,L]
+    RewriteRule ^lostpassword/?$ wp-login.php?action=lostpassword [QSA,L]
+    RewriteRule ^resetpass/?$ wp-login.php?action=resetpass [QSA,L]
+    RewriteRule ^admin-register/?$ wp-login.php?action=register [QSA,L]
+</IfModule>
+# END SF Move Login
+
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+# Disable Directory Browsing
+Options All -Indexes
+
+<Files "wp-settings.php">
+Order Allow,Deny
+Deny from all
+</Files>
+
+<Files "wp-config.php">
+Order Allow,Deny
+Deny from all
+</Files>
+
+# STRONG HTACCESS PROTECTION
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</Files>
