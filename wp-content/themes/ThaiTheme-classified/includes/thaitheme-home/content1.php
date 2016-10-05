@@ -4,10 +4,10 @@ foreach ((array) $list_cat as $id_cat_all ) {?>
 <article class="tt_list cat_all  <?php if($count % 3 == 0){echo " tt-3x";} if($count % 4 == 0){echo " tt-4x";} if($count % 5 == 0){echo " tt-5x";} if($count % 6 == 0){echo " tt-6x";} $count++; ?>">
 <a href="<?php echo home_url( '/' ); ?>category/<?php echo thaitheme_cat_slug($id_cat_all); ?>" title="<?php echo get_cat_name($id_cat_all );?>">
 <div class="tt-category-img">
-<?php if( z_taxonomy_image_url( $id_cat_all) == "") {?> 
+<?php if( z_taxonomy_image_url( $id_cat_all) == "") {?>
 <?php thaitheme_post_no_image(48,48); ?>
 <?php } else { ?>
-<img  alt="" src="<?php echo z_taxonomy_image_url( $id_cat_all); ?>?v=1.0)" />
+<img  alt="<?php echo get_cat_name($id_cat_all );?>" src="<?php echo z_taxonomy_image_url( $id_cat_all); ?>?v=1.0)" />
 <?php }?>
 </div>
 <div class="tt-category-title">

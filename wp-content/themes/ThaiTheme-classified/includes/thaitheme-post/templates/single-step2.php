@@ -7,7 +7,7 @@
 <?php $image = wp_get_attachment_image_src( $tmp_post->ID, 'thaitheme-slide' ) ?>
 <?php $image_thumbnail = wp_get_attachment_image_src( $tmp_post->ID, 'adverts-upload-thumbnail' ) ?>
 <?php if(isset($image[0])): ?>
-<a href="<?php esc_attr_e($image[0]) ?>"><img alt="" data-path="#" src="<?php esc_attr_e($image_thumbnail[0]) ?>" title="<?php esc_html_e( get_post( $post_id )->post_title ) ?>"></a> 
+<a href="<?php esc_attr_e($image[0]) ?>"><img alt="" data-path="#" src="<?php esc_attr_e($image_thumbnail[0]) ?>" title="<?php esc_html_e( get_post( $post_id )->post_title ) ?>"></a>
 <?php endif; ?>
 <?php endforeach; ?>
 </div>
@@ -30,7 +30,7 @@
 			</div>
         </div>
     </div>
-    
+
 </div>
 
 <div class="thaitheme_ad_right">
@@ -46,22 +46,22 @@
     <span class="adverts-round-icon adverts-icon-megaphone"></span>
     </div>
     <div class="adverts-grid-col adverts-col-65">
-         เลขประกาศ :  <?php esc_html_e( $post_id ) ?> 
+         เลขประกาศ :  <?php esc_html_e( $post_id ) ?>
     </div>
-	</div> 
+	</div>
     <?php $advert_category = get_the_terms( $post_id, 'category' ) ?>
-    <?php if(!empty($advert_category)): ?> 
+    <?php if(!empty($advert_category)): ?>
     <div class="adverts-grid-row ">
      <div class="adverts-grid-col adverts-col-30">
     <span class="adverts-round-icon adverts-icon-folder-open-empty"></span>
     </div>
     <div class="adverts-grid-col adverts-col-65">
-    <?php foreach((array)$advert_category as $c): ?> 
+    <?php foreach((array)$advert_category as $c): ?>
     <a href="<?php esc_attr_e( get_term_link( $c ) ) ?>"><?php esc_attr_e( $c->name );?></a><br/>
     <?php endforeach; ?>
     </div>
-	</div>        
-	<?php endif; ?>      
+	</div>
+	<?php endif; ?>
     <?php if(get_post_meta( $post_id, "thaitheme_mata_location_province", true )): ?>
     <div class="adverts-grid-row">
         <div class="adverts-grid-col adverts-col-30">
@@ -83,8 +83,8 @@
         <span class="adverts-icon-down-open"></span>
     </a>
     <span class="adverts-loader adverts-icon-spinner animate-spin"></span>
-	</div> 
-</div>	
+	</div>
+</div>
 <div class="adverts-contact-box">
     <p class="adverts-contact-method">
         <span class="adverts-icon-phone adverts-contact-icon" title="<?php _e("Phone", "adverts") ?>"></span>
@@ -94,7 +94,7 @@
        <span class="adverts-icon-mail-alt adverts-contact-icon" title="<?php _e("Email", "adverts") ?>"></span>
        <span class="adverts-contact-email"></span>
     </p>
-	</div> 
+	</div>
 </div>
 <div class="adverts-grid-row ">
      <div class="adverts-grid-col adverts-col-30">
