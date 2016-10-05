@@ -28,12 +28,12 @@ Adverts::instance()->set("form", array(
             "order" => 10,
             "label" => __( "", "adverts" ),
         ),
-
+        
         array(
             "name" => "post_title",
             "type" => "adverts_field_text",
             "order" => 20,
-            "label" => __( "หัวข้อประกาศ", "adverts" ),
+            "label" => __( "ตั้งชื่อสินค้าที่คุณต้องการลงขาย", "adverts" ),
 			"is_required" => true,
             "validator" => array(
                 array( "name"=> "is_required_title" )
@@ -43,10 +43,10 @@ Adverts::instance()->set("form", array(
             "name" => "category",
             "type" => "adverts_field_select",
             "order" => 20,
-            "label" => __("เลือกหมวดรถบริการ", "adverts"),
+            "label" => __("เลือกหมวดหมู่ให้ตรงกับสินค้า", "adverts"),
             "options" => array(),
 			"is_required" => true,
-            "validator" => array(
+            "validator" => array( 
                 array( "name" => "is_required_cat" ),
             ),
             "options_callback" => "adverts_taxonomies"
@@ -55,7 +55,7 @@ Adverts::instance()->set("form", array(
             "name" => "adverts_price",
             "type" => "adverts_field_text",
             "order" => 20,
-            "label" => __("ราคา/ค่าบริการ", "adverts"),
+            "label" => __("ระบุราคาที่เหมาะสม", "adverts"),
             "description" => "",
             "attr" => array(
                 "key" => "value"
@@ -64,7 +64,7 @@ Adverts::instance()->set("form", array(
                 array( "name" => "money" )
             ),
 			"is_required" => true,
-            "validator" => array(
+            "validator" => array( 
                 array( "name" => "is_required_price" ),
             ),
         ),
@@ -73,13 +73,13 @@ Adverts::instance()->set("form", array(
             "type" => "adverts_field_gallery",
             "order" => 20,
 			"max_choices" => 1,
-            "label" => __( "รูปภาพ", "adverts" )
+            "label" => __( "รูปภาพสินค้า", "adverts" )
         ),
         array(
             "name" => "post_content",
             "type" => "adverts_field_textarea",
             "order" => 20,
-            "label" => __( "รายละเอียดบริการ", "adverts" ),
+            "label" => __( "ใส่รายละเอียดสินค้าให้ครบถ้วน", "adverts" ),
 			"is_required" => true,
             "validator" => array(
                 array( "name"=> "is_required_content" )
@@ -92,40 +92,40 @@ Adverts::instance()->set("form", array(
             "order" => 20,
              "label" => __( "ชื่อผู้ลงประกาศ", "adverts" ),
             "is_required" => true,
-            "validator" => array(
+            "validator" => array( 
                 array( "name" => "is_required_name" ),
             )
         ),
-
-
+        
+       
 		 array(
             "name" => "adverts_email",
             "type" => "adverts_field_text",
             "order" => 20,
             "label" => __( "อีเมล์", "adverts" ),
             "is_required" => true,
-            "validator" => array(
+            "validator" => array( 
                 array( "name" => "is_required" ),
                 array( "name" => "is_email" )
             )
         ),
-
+      
 		array(
            "name" => "thaitheme_mata_location_province",
             "type" => "adverts_field_text",
 			"order" => 20,
-           "label" => __( "เลือกจังหวัด", "adverts" ),
+           "label" => __( "ระบุพื้นที่ของสินค้า", "adverts" ),
 			"is_required" => true,
-            "validator" => array(
+            "validator" => array( 
                 array( "name" => "is_required_loca" ),
             )
         ),
-
+		
 		array(
            "name" => "thaitheme_mata_location_district",
             "type" => "adverts_field_text",
 			"order" => 20,
-           "label" => __( "เลือก เขต/อำเภอ", "adverts" )
+           "label" => __( "เขต / อำเภอ", "adverts" )
         ),
 		 array(
             "name" => "adverts_phone",
@@ -133,7 +133,7 @@ Adverts::instance()->set("form", array(
             "order" => 20,
              "label" => __( "เบอร์ติดต่อ", "adverts"),
 			 "is_required" => true,
-             "validator" => array(
+             "validator" => array( 
                  array( "name"=> "string_length" ),
 				 array( "name"=> "string_length2" )
             )
@@ -205,7 +205,7 @@ adverts_form_add_field("adverts_field_radio", array(
 ));
 
 // Register custom image upload field
-/** @see adverts_field_gallery() */
+/** @see adverts_field_gallery() */ 
 adverts_form_add_field("adverts_field_gallery", array(
     "renderer" => "adverts_field_gallery",
     "callback_save" => null,
@@ -226,7 +226,7 @@ adverts_form_add_field("adverts_field_account", array(
 /** @see adverts_filter_money() */
 adverts_form_add_filter("money", array(
     "callback" => "adverts_filter_money",
-
+	
 ));
 
 /* REGISTER FORM VALIDATORS */
