@@ -9,17 +9,31 @@
 <span class="tt_bd_bottom <?php $categories = get_the_category();if ( ! empty( $categories ) ) {echo 'cat_id' . esc_html( $categories[0]->term_id ) . '';} ;?>"> </span>
 </div>
 <?php global $thaitheme_option; $thaitheme_leyout_home =  $thaitheme_option['thaitheme_leyout_home'];?>
+<?php /* ======== หมวดรถรับจ้าง ======== */ ?>
+  <div class="tt_left list tt_full">
+    <?php global $thaitheme_option; $layout = $thaitheme_option['thaitheme_homepage_cf']['enabled'];
+    if ($layout): foreach ($layout as $key=>$value) {
+        switch($key) {
+            case 'content1': get_template_part( 'includes/thaitheme-home/content1' ); /* หมวดรถรับจ้าง */  /*get_template_part <=  wp-includes/general-template.php */
+            break;
+        }
+    } endif; ?>
+  </div>
+<?php /* ======== หมวดรถรับจ้าง ======== */ ?>
 
-<div class="tt_left list tt_full">
-<?php global $thaitheme_option; $layout = $thaitheme_option['thaitheme_homepage_cf']['enabled'];
-if ($layout): foreach ($layout as $key=>$value) {
-    switch($key) {
-        case 'content1': get_template_part( 'includes/thaitheme-home/content1' ); /* หมวดรถรับจ้าง */  /*get_template_part <=  wp-includes/general-template.php */
-        break;
+<?php /* ads top */ ?>
+  <div class="tt_left list tt_full">
+    <?php //global $thaitheme_option; $layout = $thaitheme_option['thaitheme_homepage_cf']['enabled'];
+    global $thaitheme_option; $layout = $thaitheme_option['thaitheme_homepage_cf']['enabled'];
+    if ($layout): foreach ($layout as $key=>$value) {
+        switch($key) {
+    		case 'content7': get_template_part( 'includes/thaitheme-home/content7' );
+            break;
+        }
     }
-}
-endif; ?>
-</div>
+    endif; ?>
+  </div>
+<?php /* ads top  */ ?>
 
 <div class="tt_left list <?php if($thaitheme_leyout_home == 1) {?>tt_full<?php } else { ?> tt_col<?php }?>">
 <?php global $thaitheme_option; $layout = $thaitheme_option['thaitheme_homepage_cf']['enabled'];
@@ -27,7 +41,7 @@ if ($layout): foreach ($layout as $key=>$value) {
     switch($key) {
       //  case 'content1': get_template_part( 'includes/thaitheme-home/content1' ); /* หมวดรถรับจ้าง */  /*get_template_part <=  wp-includes/general-template.php */
        // break;
-        case 'content2': get_template_part( 'includes/thaitheme-home/content2' );
+        case 'content2': get_template_part( 'includes/thaitheme-home/content2' ); /* ข่าวสารประชาสัมพันธ์ */
         break;
 		case 'content3': get_template_part( 'includes/thaitheme-home/content3' ); /* ประกาศมาใหม่ล่าสุด */
         break;
@@ -37,8 +51,8 @@ if ($layout): foreach ($layout as $key=>$value) {
         break;
 		case 'content6': get_template_part( 'includes/thaitheme-home/content6' ); /* ตำแหน่งโฆษณา A2 */
         break;
-		case 'content7': get_template_part( 'includes/thaitheme-home/content7' );
-        break;
+		//case 'content7': get_template_part( 'includes/thaitheme-home/content7' );
+      //  break;
 		case 'content8': get_template_part( 'includes/thaitheme-home/content8' );
         break;
 		case 'content-banner1': get_template_part( 'includes/thaitheme-home/content-banner1' );
@@ -52,6 +66,7 @@ if ($layout): foreach ($layout as $key=>$value) {
 }
 endif; ?>
 </div>
+
 <?php global $thaitheme_option; $thaitheme_leyout_home =  $thaitheme_option['thaitheme_leyout_home']; if($thaitheme_leyout_home == 1) {?><?php } else { ?>
 	<?php get_sidebar( '' );
 		/*wp-includes/general-template.php*/
