@@ -47,13 +47,17 @@ class Adverts_Walker_Category_Options extends Walker {
                 if( !is_array( $output ) ) {
                     $output = array();
                 }
-                
-                $output[] = array(
-                    "value" => esc_attr( $category->{$args['value_field']} ),
-                    "text" => $cat_name,
-                    "depth" => $depth
-                );
-                
+
+								$id_cat_notshow = array(84,85,86,87,88,89);
+								if(in_array($category->{$args['value_field']},$id_cat_notshow)){ /* เช็ค id ที่ไม่ต้องการให้โชว์หมวดที่ต้องการ */
+								}else{
+	                $output[] = array(
+	                    "value" => esc_attr( $category->{$args['value_field']} ),
+	                    "text" => $cat_name,
+	                    "depth" => $depth
+	                );
+								}
+
                 return $output;
 	}
 }
