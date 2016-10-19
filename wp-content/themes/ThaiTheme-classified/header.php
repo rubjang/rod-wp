@@ -41,18 +41,6 @@
 <meta property="og:url" content="www.rodrubjang.com"/>
 <!-- End Social Open Graph Facebook  -->
 </head>
-  <style type="text/css">
-  body {
-  	filter:grayscale(1); -webkit-filter:grayscale(1)
-  }
-  logo *{ filter:grayscale(1); -webkit-filter:grayscale(1)}
-
-  body
-  .sp-event{ margin:0 auto; max-width:100%; text-align:center; background-color:black}
-  .sp-event img{ max-width:100%; height:auto}
-  body>.container
-
-  </style>
 <body <?php body_class(); ?>>
 <div class="tt_head_content">
 <div class="tt_head_top sb-slide">
