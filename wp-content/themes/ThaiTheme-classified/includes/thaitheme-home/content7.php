@@ -17,14 +17,17 @@
 <?php }else { ?>
 <div class="tt-img">
 <?php $tt_sticky = adext_adverts_css_classes('', get_the_ID() ) ; if($tt_sticky !=="") { ?> <div class="tt-img-sticky"></div> <?php } ?>
-<?php thaitheme_post_no_image(220,165); ?>
+<?php thaitheme_post_no_image(); ?>
 <div class="tt-opacity"></div>
 </div>
 <?php } ?>
 <div class="tt_desc">
 <p class="tt_ad_location"><i class="fa fa-map-marker"></i> <?php $thaitheme_mata_location = get_post_meta( get_the_ID(), "thaitheme_mata_location_province", true );  ?><?php esc_html_e( $thaitheme_mata_location ) ?> </p>
 <h3><?php esc_html_e( get_post( $post_id )->post_title ) ?></h3>
-<p class="tt_ad_price"><?php $price = get_post_meta( get_the_ID(), "adverts_price", true );  ?><?php esc_html_e( adverts_price( $price ) ) ?> บาทcontent7</p>
+<!--
+<p class="tt_ad_price"><?//php $price = get_post_meta( get_the_ID(), "adverts_price", true );  ?>
+	<?//php esc_html_e( adverts_price( $price ) ) ?> บาท</p>
+-->
 </div>
 </a>
 </article>
