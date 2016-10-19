@@ -8,9 +8,10 @@
 <article class="tt_list thaitheme post_news  <?php echo adext_adverts_css_classes( '', get_the_ID() ) ;?> <?php if($count % 2 == 0){echo " tt-2x";} if($count % 3 == 0){echo " tt-3x";} if($count % 4 == 0){echo " tt-4x";} if($count % 5 == 0){echo " tt-5x";} $count++; ?>">
 <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
 	<?php $image = thaitheme_img_list( get_the_ID() ) ?>
-	<?php if($image) { ?>
+	<?php if($image){ ?>
 		<div class="tt-img">
 		<?php $tt_sticky = adext_adverts_css_classes('', get_the_ID() ) ; if($tt_sticky !=="") { ?> <div class="tt-img-sticky"></div> <?php } ?>
+		<?php echo $image; ?>
 		<img src="<?php esc_attr_e($image) ?>?v=1.0" alt=""/>
 		<div class="tt-opacity"></div>
 		</div>
