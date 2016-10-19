@@ -11,7 +11,7 @@
 	<?php if($image){ ?>
 		<div class="tt-img">
 		<?php $tt_sticky = adext_adverts_css_classes('', get_the_ID() ) ; if($tt_sticky !=="") { ?> <div class="tt-img-sticky"></div> <?php } ?>
-		<?php echo $image; ?>
+		<?php $img_s = explode("-",$image); $image_s1 = $img_s[0]; echo $image_s1;?>
 		<img src="<?php esc_attr_e($image) ?>?v=1.0" alt=""/>
 		<div class="tt-opacity"></div>
 		</div>
