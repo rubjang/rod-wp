@@ -14,7 +14,7 @@
 		<?php
    //http://www.rodrubjang.com/wp-content/uploads/2016/06/ads_porn-220x165.png?v=1.0
 
-	 	echo "img>".str_replace("-220x165.",".",esc_attr_e($image),$var);
+	 	echo str_replace("-220x165.",".",$image);
 
 //		$img_cut = explode(".",$image); $img1 = $img_cut[0]; $img2 = $img_cut[1];  ?>
 		<img src="<?php esc_attr_e($image) ?>?v=1.0" alt=""/>
