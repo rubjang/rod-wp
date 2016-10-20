@@ -11,7 +11,12 @@
 	<?php if($image){ ?>
 		<div class="tt-img">
 		<?php $tt_sticky = adext_adverts_css_classes('', get_the_ID() ) ; if($tt_sticky !=="") { ?> <div class="tt-img-sticky"></div> <?php } ?>
-		<?php //echo esc_attr_e($image); ?>
+		<?php
+   //http://www.rodrubjang.com/wp-content/uploads/2016/06/ads_porn-220x165.png?v=1.0
+
+	 	echo "img>".str_replace("-220x165.",".",esc_attr_e($image),$var);
+
+//		$img_cut = explode(".",$image); $img1 = $img_cut[0]; $img2 = $img_cut[1];  ?>
 		<img src="<?php esc_attr_e($image) ?>?v=1.0" alt=""/>
 		<div class="tt-opacity"></div>
 		</div>
